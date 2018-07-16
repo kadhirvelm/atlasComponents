@@ -8,7 +8,7 @@
     "typescript"
   ],
   "main": "src/build/dist/index.js",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "author": "Kadhirvel Manickam and Karthik Manickam",
   "license": "MIT",
   "dependencies": {
