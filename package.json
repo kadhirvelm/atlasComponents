@@ -14,6 +14,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "coverage": "yarn test -- --coverage",
     "precommit": "pretty-quick --staged",
     "lint": "tslint src/**/*.ts && tslint src/**/*.tsx",
     "eject": "react-scripts-ts eject"
@@ -27,5 +28,23 @@
     "prettier": "^1.13.7",
     "pretty-quick": "^1.6.0",
     "typescript": "^2.9.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/**/*.test.ts",
+      "!src/**/*.test.tsx",
+      "!src/index.tsx",
+      "!src/registerServiceWorker.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 100
+      }
+    }
   }
 }
