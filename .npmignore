@@ -5,3 +5,5 @@ scripts
 tsconfig.*.json
 tslint.json
 src/docs/
+src/components/
+README.md
