@@ -2,12 +2,16 @@ version: 2
 jobs:
   install:
     steps:
+      - checkout
       - restore_cache:
-          keys: yarn-packages-{{ checksum "yarn.lock" }}
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install
       - save_cache:
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths: node_modules
+          key: 
+            - yarn-packages-{{ checksum "yarn.lock" }}
+          paths: 
+            - node_modules
   build:
     docker:
       - image: circleci/node:7.10
