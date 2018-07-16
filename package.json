@@ -2,6 +2,11 @@
   "name": "atlas-components",
   "description": "Public components for react",
   "homepage": "https://github.com/kadhirvelm/atlasComponents",
+  "keywords": [
+    "react components",
+    "react",
+    "typescript"
+  ],
   "version": "0.1.1",
   "author": "Kadhirvel Manickam and Karthik Manickam",
   "license": "MIT",
