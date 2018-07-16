@@ -3,17 +3,11 @@ jobs:
   install:
     steps:
       - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install
+          keys: yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn install
       - save_cache:
-          name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+          paths: node_modules
   build:
     docker:
       - image: circleci/node:7.10
@@ -25,7 +19,6 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - checkout
-      - run: yarn
       - run: yarn lint
       - run: yarn test
 workflows:
