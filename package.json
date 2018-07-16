@@ -1,7 +1,15 @@
 {
   "name": "atlas-components",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Public components for react",
+  "homepage": "https://github.com/kadhirvelm/atlasComponents",
+  "keywords": [
+    "react components",
+    "react",
+    "typescript"
+  ],
+  "version": "0.1.3",
+  "author": "Kadhirvel Manickam and Karthik Manickam",
+  "license": "MIT",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
