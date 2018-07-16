@@ -82,19 +82,19 @@
       "!src/docs/registerServiceWorker.ts"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
+      "src/**/__tests__/**/*.(j|t)s?(x)",
+      "src/**/?(*.)(spec|test).(j|t)s?(x)"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
-      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^.+\\.(js|jsx|mjs)$": "node_modules/babel-jest",
+      "^.+\\.tsx?$": "config/jest/typescriptTransform.js",
+      "^.+\\.css$": "config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
@@ -117,7 +117,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "<rootDir>/tsconfig.test.json"
+        "tsConfigFile": "tsconfig.test.json"
       }
     },
     "coverageThreshold": {
