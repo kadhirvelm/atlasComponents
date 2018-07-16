@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: yarn build
       - run: yarn test
-  install_deps:
+  install:
     docker:
       - image: circleci/node:7.10
     steps:
@@ -17,7 +17,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - install_deps
-      - build_test
-        requires:
-          - install_deps
+      - install
+      - build_test:
+          requires:
+            - install
