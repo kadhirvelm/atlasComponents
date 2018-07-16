@@ -5,17 +5,26 @@ jobs:
       - image: circleci/node:7.10
     parallelism: 2
     steps:
-      - run: yarn build
-      - run: yarn test
+      - run: 
+          name: Build
+          command: yarn build
+      - run: 
+          name: Test
+          command: yarn test
   install:
     docker:
       - image: circleci/node:7.10
     steps:
       - checkout
       - restore_cache:
-          keys: yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install
+          name: Restore yarn package cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
       - save_cache:
+          name: Save yarn package cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
