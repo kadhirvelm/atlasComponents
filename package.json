@@ -43,8 +43,8 @@
       "src/**/*.tsx",
       "!src/**/*.test.ts",
       "!src/**/*.test.tsx",
-      "!src/index.tsx",
-      "!src/registerServiceWorker.ts"
+      "!src/docs/index.tsx",
+      "!src/docs/registerServiceWorker.ts"
     ],
     "coverageThreshold": {
       "global": {
