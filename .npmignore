@@ -1,0 +1,9 @@
+.circleci
+config
+public
+scripts
+tsconfig.*.json
+tslint.json
+README.md
+src/
+dist/docs/*
