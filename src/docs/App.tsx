@@ -1,9 +1,15 @@
 import * as React from "react";
-import "./App.css";
+
+import { AtlasButton } from "../components";
 
 class App extends React.Component {
   public render() {
-    return <div className="App"> Atlas components docs running</div>;
+    return (
+      <div className="flexbox">
+        <div> Atlas components docs running. </div>
+        <AtlasButton>Test!</AtlasButton>
+      </div>
+    );
   }
 }
 
