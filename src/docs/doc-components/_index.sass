@@ -1,9 +1,24 @@
-@import "./Navbar/navbar"
+@import "./HelperComponents/index"
 
 @import "variables"
 
 .doc-root
+    overflow: hidden
+    display: flex
     flex-direction: column
+    flex: 1 0 aut
     height: 96vh
     margin: 2vh 0 2vh 0
-    overflow: hidden
+
+    .atlas-header
+        display: flex
+        justify-content: center
+        align-items: center
+        background: $blue
+        color: white
+        border-radius: 5px
+        height: 75px
+    
+    .main-root
+        display: flex
+        flex: 1

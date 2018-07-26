@@ -1,7 +1,6 @@
 import * as React from "react";
 
-import { ComponentDocs } from "./ComponentDocs";
-import { Navbar } from "./Navbar";
+import { ComponentHolder, Navbar } from "./HelperComponents";
 
 interface IAppState {
   currentComponent: string;
@@ -15,11 +14,16 @@ class App extends React.Component<{}, IAppState> {
   public render() {
     return (
       <div className="doc-root">
-        <Navbar
-          currentComponent={this.state.currentComponent}
-          openDocs={this.openDocs}
-        />
-        <ComponentDocs componentName={this.state.currentComponent} />
+        <div className="atlas-header">
+          <h3> Atlas Components </h3>
+        </div>
+        <div className="main-root">
+          <Navbar
+            currentComponent={this.state.currentComponent}
+            openDocs={this.openDocs}
+          />
+          <ComponentHolder componentName={this.state.currentComponent} />
+        </div>
       </div>
     );
   }
