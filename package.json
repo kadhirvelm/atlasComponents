@@ -63,7 +63,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "coverage": "yarn test -- --coverage",
     "compile": "tsc -p src",
-    "precommit": "pretty-quick --staged",
+    "prettier-fix": "pretty-quick --staged",
     "lint": "tslint src/**/*.ts && tslint src/**/*.tsx"
   },
   "devDependencies": {
