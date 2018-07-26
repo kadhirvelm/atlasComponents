@@ -1,0 +1,55 @@
+@import "../variables"
+
+.atlas-navbar
+    display: flex
+    flex-direction: column
+    flex: 1 0 auto
+    height: 100%
+
+    .atlas-header
+        display: flex
+        justify-content: center
+        align-items: center
+        background: $blue
+        color: white
+        border-radius: 5px
+        height: 75px
+
+    .atlas-sidebar
+        display: flex
+        flex-direction: column
+        flex: 1 0 auto
+        width: 20%
+        background: $white
+        margin-top: 10px
+        border-radius: 5px
+        border: 1px solid $faded-dark-gray
+
+        .header
+            display: flex
+            justify-content: center
+            padding: 10px 0
+            border-bottom: 1px solid $faded-dark-gray
+
+        .component-list
+            display: flex
+            flex: 1
+            flex-direction: column
+            height: 100%
+
+            .component-row
+                display: flex
+                align-items: center
+                height: 20px
+                font-size: 15px
+                cursor: pointer
+                padding: 10px
+                padding-left: 20px
+                transition: all 250ms ease-in-out
+
+            .component-row:hover
+                color: $blue
+
+            .selected
+                background-color: $golden
+                height: 30px

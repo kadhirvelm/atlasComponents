@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import * as React from "react";
 
-import { AtlasButton } from "../index";
+import { AtlasButton } from "..";
 
 describe("AtlasButton tests", () => {
   it("renders without crashing", () => {
