@@ -34,6 +34,14 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+    publish:
+      steps:
+        - checkout
+        - yarn
+        - yarn compile
+        - npm publish
+        - yarn build
+        - yarn deploy
 workflows:
   version: 2
   build_and_test:
@@ -42,14 +50,8 @@ workflows:
       - build_test:
           requires:
             - install
-deployment:
-  npm:
-    branches:
-      only: master
-    tags:
-      only: /^v.*/
-    commands:
-      - yarn compile
-      - npm publish
-      - yarn build
-      - yarn deploy
+      - publish:
+          branches:
+            only: master
+          tags:
+            only: /^v.*/
