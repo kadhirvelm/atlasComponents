@@ -73,6 +73,7 @@
     "@types/node": "^10.5.2",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
     "node-sass": "^4.9.2",
     "prettier": "^1.13.7",
@@ -82,16 +83,11 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.ts",
-      "src/**/*.tsx",
-      "!src/**/*.test.ts",
-      "!src/**/*.test.tsx",
-      "!**/index.tsx",
-      "!**/index.ts",
-      "!src/docs/registerServiceWorker.ts"
+      "src/components/**/*.(ts|tsx)"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/setupTests.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/*.test.tsx"
@@ -102,7 +98,8 @@
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js",
+      "^.+\\.js$": "babel-jest"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
