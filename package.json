@@ -1,7 +1,7 @@
 {
   "name": "atlas-components",
   "description": "Public components for react",
-  "homepage": "https://github.com/kadhirvelm/atlasComponents",
+  "homepage": "https://kadhirvelm.github.io/atlasComponents/",
   "keywords": [
     "react components",
     "react",
@@ -9,7 +9,7 @@
   ],
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.3.0",
+  "version": "0.3.5",
   "author": "Kadhirvel Manickam and Karthik Manickam",
   "license": "MIT",
   "dependencies": {
@@ -66,7 +66,8 @@
     "coverage": "yarn test -- --coverage",
     "compile": "tsc -p src",
     "precommit": "pretty-quick --staged",
-    "lint": "tslint src/**/*.ts && tslint src/**/*.tsx"
+    "lint": "tslint src/**/*.ts && tslint src/**/*.tsx",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/jest": "^23.3.0",
@@ -74,6 +75,7 @@
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
     "enzyme-adapter-react-16": "^1.1.1",
+    "gh-pages": "^1.2.0",
     "husky": "^0.14.3",
     "node-sass": "^4.9.2",
     "prettier": "^1.13.7",
