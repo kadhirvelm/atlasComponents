@@ -33,15 +33,8 @@ export class AtlasButton extends React.PureComponent<
         {...this.props}
         className={classNames("atlas-button", this.props.className)}
       >
-        {this.renderContents()}
+        {this.props.label || this.props.children}
       </button>
     );
-  }
-
-  private renderContents() {
-    if (this.props.label !== undefined) {
-      return <div className="atlas-label">{this.props.label}</div>;
-    }
-    return this.props.children;
   }
 }
