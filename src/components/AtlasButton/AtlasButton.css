@@ -1,0 +1,17 @@
+.atlas-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  transition: all 250ms ease-in-out;
+  width: fit-content;
+  min-width: 100px;
+}
+.atlas-button:active {
+  box-shadow: -1px 2px black;
+  transform: translateY(3px);
+  transition: all 250ms ease-in-out;
+}
