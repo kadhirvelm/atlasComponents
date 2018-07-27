@@ -60,6 +60,9 @@ jobs:
           name: Install
           command: yarn
       - run:
+          name: Compile
+          command: yarn compile
+      - run:
           name: Build
           command: yarn build
       - run:
