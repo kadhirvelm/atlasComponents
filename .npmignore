@@ -4,5 +4,6 @@
 !dist/**/*
 !node_modules/*
 !node_modules/**/*
-!index.ts
+!index.d.ts
+!index.js
 !README.md
