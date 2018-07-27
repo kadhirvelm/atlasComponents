@@ -5,7 +5,6 @@
     "target": "es5",
     "lib": ["es6", "dom"],
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
@@ -27,6 +26,9 @@
     "webpack",
     "jest",
     "config",
-    "src/setupTests.ts"
+    "setupTests.ts",
+    "componentDemos/*",
+    "docs/*",
+    "components/**/__tests__/*"
   ]
 }

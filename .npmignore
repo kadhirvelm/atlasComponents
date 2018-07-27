@@ -1,9 +1,6 @@
-.circleci
-config
-public
-scripts
-tsconfig.*.json
-tslint.json
-README.md
-src/
-dist/docs/*
+*
+**/*
+!dist/*
+!node_modules/*
+!index.ts
+!README.md
