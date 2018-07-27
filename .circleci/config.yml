@@ -1,7 +1,4 @@
 version: 2
-dependencies:
-  pre:
-    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 jobs:
   build_test:
     docker:
@@ -45,6 +42,9 @@ jobs:
       - run:
           name: Compile
           command: yarn compile
+      - run:
+          name: Authenticate
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
           name: Publish
           command: npm publish
