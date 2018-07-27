@@ -64,7 +64,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "coverage": "yarn test -- --coverage",
-    "compile": "tsc -p src",
+    "compile": "tsc -p src && sass --update src/components:src/components --no-cache --sourcemap=none && cd src && copyfiles components/**/*.css ../dist/",
     "precommit": "pretty-quick --staged",
     "lint": "tslint src/**/*.ts && tslint src/**/*.tsx",
     "deploy": "gh-pages -d build"
@@ -74,6 +74,7 @@
     "@types/node": "^10.5.2",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "copyfiles": "^2.0.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "gh-pages": "^1.2.0",
     "husky": "^0.14.3",
