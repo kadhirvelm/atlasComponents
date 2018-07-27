@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 
-import "./AtlasButton.css";
+import "./AtlasButton.sass";
 
 export interface IAtlasButtonProps {
   /**
