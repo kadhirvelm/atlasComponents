@@ -165,6 +165,36 @@ module.exports = {
               }
             ]
           },
+          {
+            test: /\.sass$/,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve("style-loader"),
+                    options: {
+                      hmr: false
+                    }
+                  },
+                  use: [
+                    {
+                      loader: require.resolve("css-loader"),
+                      options: {
+                        importLoaders: 1,
+                        minimize: true,
+                        sourceMap: shouldUseSourceMap
+                      }
+                    },
+                    {
+                      loader: require.resolve("sass-loader")
+                    }
+                  ]
+                },
+                extractTextPluginOptions
+              )
+            )
+            // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
