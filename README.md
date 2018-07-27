@@ -10,17 +10,22 @@ Public components for React
 
 `yarn add atlas-components`
 
-### Usage
+### Basic Usage
 
 `import { AtlasButton } from "atlas-components";`
 
 In render:
 
-````public render() {
-    return (
-        <AtlasButton />
-    )
-}```
+```
+public render() {
+    return <AtlasButton label="Test Button" />
+}
+```
 
-### Docs
-````
+### Contributing
+
+1.  Create a new component folder in `src/components`
+2.  Follow the format of AtlasButton (index.ts, full sass file, and no default exporting) and add your component to AtlasC
+3.  Create a file called exactly what your exported component is called in `src/componentDemos`
+4.  It should automatically be picked up and added to the docs
+5.  Submit and PR!

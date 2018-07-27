@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { AtlasButton } from "../../../components";
+import { AtlasButton } from "../components";
 
 export default class AtlasButtonDemo extends React.Component {
   public render() {

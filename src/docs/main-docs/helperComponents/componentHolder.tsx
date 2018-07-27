@@ -49,7 +49,7 @@ export class ComponentHolder extends React.Component<
 
   private importComponent(componentDemoName: string) {
     return Loadable({
-      loader: () => import(`../../componentDemos/${componentDemoName}`),
+      loader: () => import(`../../../componentDemos/${componentDemoName}`),
       loading: () => <div />
     });
   }

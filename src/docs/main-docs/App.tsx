@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import * as AtlasComponents from "../../components";
 import { ComponentHolder, Navbar } from "./helperComponents";
 
 interface IAppState {
@@ -7,7 +8,7 @@ interface IAppState {
 }
 
 class App extends React.Component<{}, IAppState> {
-  public components: string[] = ["AtlasButton"];
+  public components: string[] = [...Object.keys(AtlasComponents)];
 
   public state = {
     currentComponent: ""
