@@ -1,7 +1,4 @@
 version: 2
-dependencies:
-  pre:
-    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 jobs:
   build_test:
     docker:
@@ -34,6 +31,37 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+  publish:
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: yarn
+      - run:
+          name: Compile
+          command: yarn compile
+      - run:
+          name: Authenticate
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
+          name: Publish
+          command: npm publish
+  deploy:
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: yarn
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Deploy
+          command: yarn deploy
 workflows:
   version: 2
   build_and_test:
@@ -42,10 +70,21 @@ workflows:
       - build_test:
           requires:
             - install
-deployment:
-  npm:
-    branch: master
-    tag: /v[0-9]+(\.[0-9]+)*/
-    commands:
-      - yarn compile
-      - npm publish
+      - publish:
+          requires:
+            - install
+            - build_test
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /^v.*/
+      - deploy:
+          requires:
+            - install
+            - build_test
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /^v.*/
