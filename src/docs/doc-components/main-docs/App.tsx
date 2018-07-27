@@ -1,12 +1,14 @@
 import * as React from "react";
 
-import { ComponentHolder, Navbar } from "./HelperComponents";
+import { ComponentHolder, Navbar } from "./helperComponents";
 
 interface IAppState {
   currentComponent: string;
 }
 
 class App extends React.Component<{}, IAppState> {
+  public components: string[] = ["AtlasButton"];
+
   public state = {
     currentComponent: ""
   };
@@ -19,6 +21,7 @@ class App extends React.Component<{}, IAppState> {
         </div>
         <div className="main-root">
           <Navbar
+            components={this.components}
             currentComponent={this.state.currentComponent}
             openDocs={this.openDocs}
           />
