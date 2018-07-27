@@ -51,3 +51,5 @@ deployment:
     commands:
       - yarn compile
       - npm publish
+      - yarn build
+      - yarn deploy
