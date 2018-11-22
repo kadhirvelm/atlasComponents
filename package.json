@@ -61,7 +61,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node scripts/start.js & sass --watch src/components:src/components --no-source-map",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "coverage": "yarn test -- --coverage",
@@ -89,6 +89,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/components/**/*.(ts|tsx)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/components/index.ts",
+      "node_modules/"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",

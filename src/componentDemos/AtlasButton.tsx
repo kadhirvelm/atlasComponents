@@ -7,7 +7,7 @@ export default class AtlasButtonDemo extends React.Component {
     return (
       <div>
         <AtlasButton label="With label" />
-        <AtlasButton>Test Button</AtlasButton>
+        <AtlasButton>Test Label</AtlasButton>
       </div>
     );
   }
