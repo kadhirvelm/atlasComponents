@@ -90,6 +90,10 @@
     "collectCoverageFrom": [
       "src/components/**/*.(ts|tsx)"
     ],
+    "coveragePathIgnorePatterns": [
+      "src/components/index.ts",
+      "node_modules/"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/setupTests.js"
